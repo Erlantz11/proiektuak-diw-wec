@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wordle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Wordle</h1>
+  </header>
+
+  <main>
+
+    <!-- PANTALLA 1: configuración de la partida -->
+    <section id="pantalla-config" class="pantalla">
+      <form id="form-config">
+        <div class="campo">
+          <label for="intentos">Saiakerak</label>
+          <select id="intentos" name="intentos">
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6" selected>6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="letras">Hizki kopurua</label>
+          <select id="letras" name="letras">
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+
+        <button type="submit" id="btn-jugar">Jokatu</button>
+      </form>
+    </section>
+
+    <!-- PANTALLA 2: el juego (mensajes, tablero y teclado) -->
+    <section id="pantalla-juego" class="pantalla oculto">
+      <p id="mensaje" class="mensaje"></p>
+      <div id="tablero" class="tablero"></div>
+      <div id="teclado" class="teclado"></div>
+    </section>
+
+    <!-- PANTALLA 3: resultado final e historial -->
+    <section id="pantalla-fin" class="pantalla oculto">
+      <p id="resultado" class="resultado"></p>
+      <h2>Azken partidak</h2>
+      <div id="historial" class="historial"></div>
+      <button type="button" id="btn-reiniciar">Berriro jokatu</button>
+    </section>
+
+  </main>
+
+  <script src="code.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+:root {
+  --fondo: #121213;
+  --texto: #ffffff;
+  --borde: #3a3a3c;
+  --borde-relleno: #565758;
+
+  --color-no: #3a3a3c;
+  --color-existe: #b59f3b;
+  --color-ok: #538d4e;
+
+  --color-tecla: #818384;
+  --color-panel: #1c1c1e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  text-align: center;
+  letter-spacing: 0.3rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+main {
+  width: 100%;
+  max-width: 520px;
+  padding: 0 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pantalla {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oculto {
+  display: none;
+}
+
+/* ---------- Configuración ---------- */
+#form-config {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  background: var(--color-panel);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.campo select {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--borde);
+  background: var(--fondo);
+  color: var(--texto);
+  font-size: 1rem;
+}
+
+#btn-jugar,
+#btn-reiniciar {
+  background: #3a7bd5;
+  color: white;
+  border: none;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#btn-jugar:hover,
+#btn-reiniciar:hover {
+  filter: brightness(1.1);
+}
+
+#btn-jugar:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ---------- Juego ---------- */
+.mensaje {
+  min-height: 1.4rem;
+  font-weight: bold;
+}
+
+.tablero {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 1rem 0 1.5rem;
+}
+
+.fila {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.casilla {
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--borde);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.casilla.rellena {
+  border-color: var(--borde-relleno);
+}
+
+/* Colores tras comprobar la palabra (casillas y teclas) */
+.casilla.ok {
+  background: var(--color-ok);
+  border-color: var(--color-ok);
+}
+
+.casilla.existe {
+  background: var(--color-existe);
+  border-color: var(--color-existe);
+}
+
+.casilla.no {
+  background: var(--color-no);
+  border-color: var(--color-no);
+}
+
+/* ---------- Teclado ---------- */
+.teclado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.fila-teclado {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.tecla {
+  flex: 1;
+  max-width: 42px;
+  height: 48px;
+  background: var(--color-tecla);
+  color: var(--texto);
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.tecla.ancha {
+  max-width: 70px;
+  font-size: 0.75rem;
+}
+
+.tecla:hover {
+  filter: brightness(1.15);
+}
+
+/* ---------- Final ---------- */
+.resultado {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.historial {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.partida {
+  display: flex;
+  justify-content: space-between;
+  background: var(--color-panel);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border-left: 5px solid var(--color-no);
+}
+
+.partida.ganada {
+  border-left-color: var(--color-ok);
+}
+
+.partida.perdida {
+  border-left-color: #c0392b;
+}
+
+@media (max-width: 420px) {
+  .casilla {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+  .tecla {
+    height: 42px;
+    max-width: 34px;
+    font-size: 0.8rem;
+  }
+  .tecla.ancha {
+    max-width: 52px;
+    font-size: 0.65rem;
+  }
+}
