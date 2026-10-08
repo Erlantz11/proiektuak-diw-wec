@@ -1,75 +1,75 @@
-# Currículum de Nobita Nobi
+# Nobita Nobi-ren curriculuma
 
-CV en HTML y CSS del personaje Nobita Nobi, construido con `box-sizing: border-box`, variables CSS, unidades `rem`, `calc()`, `min()`, imagen de fondo, gradiente, tarjetas moldeables, Grid, Flexbox y diseño responsive.
+Nobita Nobi pertsonaiaren CV-a HTML eta CSS bidez eginda, hauek erabilita: `box-sizing: border-box`, CSS aldagaiak, `rem` unitateak, `calc()`, `min()`, atzealde-irudia, gradientea, txartel moldagarriak, Grid, Flexbox eta diseinu erantzulea (responsive).
 
-## Archivos
+## Fitxategiak
 
-- `index.html` — estructura del CV.
-- `nobita.css` — todos los estilos.
-- `nobita.jpg` — foto de perfil (debe estar en la misma carpeta que `index.html`).
-- `escuela.jpg` — foto de fondo de la cabecera (debe estar en la misma carpeta que `index.html`).
+- `index.html` — CV-aren egitura.
+- `nobita.css` — estilo guztiak.
+- `nobita.jpg` — profileko argazkia (`index.html` fitxategiaren karpeta berean egon behar du).
+- `escuela.jpg` — goiburuaren atzealdeko argazkia (`index.html` fitxategiaren karpeta berean egon behar du).
 
-## Estructura del CV
+## CV-aren egitura
 
-Inspirado en la maquetación del CV de Son Goku (foto y barra lateral a toda altura, cabecera de color sólido dentro de la columna de contenido, y una "hoja" de ancho fijo centrada sobre un fondo neutro), el documento se divide en:
+Son Goku-ren CV-aren maketazioan oinarrituta (argazkia eta alboko barra altuera osoan, kolore bakarreko goiburua eduki-zutabearen barruan, eta atzealde neutro baten gainean zentratutako zabalera finkoko "orria"), dokumentua honela banatzen da:
 
-1. **`.page-outer`** — fondo neutro que ocupa toda la ventana y centra la hoja, simulando el visor de un PDF.
-2. **`.sheet`** — la "hoja" del CV en sí: ancho fijo (`min(60rem, 96vw)`), esquinas redondeadas y sombra, para que se vea como una página y no como una web que ocupa todo el ancho del navegador.
-3. **`.sidebar`** — foto, datos personales, habilidades (con barras de progreso), objetos clave, idiomas y una cita. Ocupa toda la altura de la hoja (no solo la de su propio contenido), igual que en el CV de Goku.
-4. **`.main-content`** — cabecera de color sólido (`.cv-header`) que integra, en un mismo bloque oscuro, el nombre (`.header-top`) y el perfil profesional (`.header-profile`, en dos columnas en escritorio) — igual que en el CV de Goku, donde el perfil está pegado a la cabecera y no es una caja aparte. Debajo, sobre fondo blanco: experiencia (con listas de viñetas, no párrafos), formación en tarjetas numeradas 01-04, y un bloque de dos columnas con los logros destacados (lista) junto a las manías y trucos (etiquetas) — replicando el "Logros destacados / Técnicas y transformaciones" de Goku. Cierra con el registro de hazañas en tabla.
+1. **`.page-outer`** — leiho osoa betetzen duen atzealde neutroa, orria zentratzen duena, PDF ikusle baten itxura emanez.
+2. **`.sheet`** — CV-aren "orria" bera: zabalera finkoa (`min(60rem, 96vw)`), ertz biribilduak eta itzala, nabigatzailearen zabalera osoa hartzen duen web bat izan beharrean orri bat dela ematen duena.
+3. **`.sidebar`** — argazkia, datu pertsonalak, gaitasunak (aurrerapen-barrekin), objektu gakoak, hizkuntzak eta aipu bat. Orriaren altuera osoa hartzen du (ez bakarrik bere edukiarena), Goku-ren CV-an bezala.
+4. **`.main-content`** — kolore bakarreko goiburua (`.cv-header`), bloke ilun bakar batean izena (`.header-top`) eta profil profesionala (`.header-profile`, mahaigainean bi zutabetan) biltzen dituena — Goku-ren CV-an bezala, non profila goiburuari itsatsita dagoen eta ez den kutxa bereizi bat. Azpian, atzealde zuriaren gainean: esperientzia (ez paragrafoak, zerrenda buletadunak), prestakuntza 01-04 zenbakitutako txartelen bidez, eta bi zutabeko bloke bat, lorpen nabarmenak (zerrenda) eta maniak eta trikimailuak (etiketak) elkarrekin dituena — Goku-ren "Logros destacados / Técnicas y transformaciones" atala errepikatuz. Balentrien erregistroa taula batekin amaitzen da.
 
-La hoja usa **Flexbox** como layout general (`.sheet`): en móvil apila la barra lateral y el contenido en una columna; a partir del media query, los coloca en fila, con la barra lateral de ancho fijo y el contenido ocupando el resto. Dentro de las secciones se usa **Grid** con `gap` para las tarjetas de formación (`.training-grid`) y para el bloque de logros/manías (`.split-block`), y **Flexbox** para alinear etiquetas, cabeceras de tarjeta, los datos personales y las dos columnas del perfil profesional. El registro de hazañas se muestra en una tabla HTML semántica, envuelta en `.table-wrapper` con `overflow-x: auto` para que siga siendo legible en móvil sin necesitar otro media query.
+Orriak **Flexbox** erabiltzen du layout orokor gisa (`.sheet`): mugikorrean alboko barra eta edukia zutabe batean pilatzen ditu; media query-tik aurrera, errenkadan jartzen ditu, alboko barra zabalera finkoarekin eta edukia gainerakoa betetzen. Atalen barruan **Grid** erabiltzen da `gap`-arekin prestakuntza-txartelentzat (`.training-grid`) eta lorpen/maniak blokerako (`.split-block`), eta **Flexbox** etiketak, txartelen goiburuak, datu pertsonalak eta profil profesionalaren bi zutabeak lerrokatzeko. Balentrien erregistroa HTML taula semantiko batean erakusten da, `.table-wrapper` batean bilduta `overflow-x: auto`-rekin, mugikorrean irakurgarria izan dadin beste media query bat behar izan gabe.
 
-## Datos simplificados
+## Datu sinplifikatuak
 
-Se ha quitado el correo y el teléfono ficticios de la cabecera (poco realistas para un estudiante de primaria) y se han sustituido por etiquetas cortas, reutilizando la misma clase `.tag` que ya se usaba en la barra lateral, en vez de crear una clase nueva.
+Goiburuko posta elektronikoa eta telefono fikziozkoak kendu dira (lehen hezkuntzako ikasle batentzat errealistak ez direnez), eta etiketa laburrekin ordezkatu dira, alboko barran dagoeneko erabiltzen zen `.tag` klase bera berrerabiliz, klase berri bat sortu beharrean.
 
-## Animaciones
+## Animazioak
 
-La página se presenta con una pequeña entrada en cascada al cargar, más viva que antes pero sin dejar de ser sobria (nada de rebotes ni parpadeos):
+Orria sarrera-animazio txiki batekin aurkezten da kargatzean, lehen baino bizi-bizia baina serio jarraituz (errebotarik edo keinurik gabe):
 
-- La barra lateral y el contenido principal aparecen sección a sección, con un ligero desvanecimiento y desplazamiento hacia arriba (`@keyframes fade-in-up`), cada bloque con un pequeño retraso respecto al anterior.
-- Las barras de habilidades "crecen" desde 0 hasta su valor final al cargar (`@keyframes grow-bar`).
-- Las tarjetas se elevan ligeramente al pasar el ratón por encima.
-- Las etiquetas y las filas de la tabla de registro cambian de color al pasar el ratón.
+- Alboko barra eta eduki nagusia atalez atal agertzen dira, desagerpen arin batekin eta gora egiten duen desplazamendu batekin (`@keyframes fade-in-up`), bloke bakoitza aurrekoarekiko atzerapen txiki batekin.
+- Gaitasunen barrak 0tik azken baliora "hazten" dira kargatzean (`@keyframes grow-bar`).
+- Txartelak apur bat altxatzen dira sagua gainetik pasatzean.
+- Etiketek eta erregistro-taulako errenkadek kolorea aldatzen dute sagua gainetik pasatzean.
 
-Todo con `transition` o animaciones cortas (0.2 a 0.6 segundos) y sin JavaScript.
+Dena `transition` edo animazio laburrekin (0,2 eta 0,6 segundo artean) eta JavaScript gabe.
 
-## Clases reutilizadas
+## Berrerabilitako klaseak
 
-- `.widget` — mismas tarjetas para datos personales, habilidades, objetos clave e idiomas en la barra lateral.
-- `.card` — misma tarjeta base para los tres puestos de experiencia.
-- `.tag` — mismo estilo de etiqueta para objetos clave, idiomas, manías y trucos, y las etiquetas de la cabecera (con la variante `.tag-light` para verse bien sobre fondo oscuro).
+- `.widget` — alboko barrako datu pertsonalen, gaitasunen, objektu gakoen eta hizkuntzen txartel berberak.
+- `.card` — hiru esperientzia-lanpostuen oinarrizko txartel bera.
+- `.tag` — etiketa-estilo bera objektu gakoetarako, hizkuntzetarako, maniak eta trikimailuetarako, eta goiburuko etiketetarako (`.tag-light` aldaerarekin atzealde ilunaren gainean ongi ikusteko).
 
-## Técnicas CSS aplicadas
+## Aplikatutako CSS teknikak
 
-- Variables en `:root` para colores, radios de borde, tamaños de fuente (`rem`) y espaciados, evitando repetir valores.
-- `calc()` para el padding vertical de la cabecera oscura (`calc(var(--space-lg) + 0.5rem)`).
-- `min()` para limitar el ancho de la hoja (`min(60rem, 96vw)`) y el tamaño del nombre en la cabecera (`min(2.5rem, 8vw)`).
-- Imagen de fondo real (`escuela.jpg`, muy atenuada) combinada con un patrón de puntos (`radial-gradient`), un anillo decorativo y un gradiente lineal claramente visible entre el dorado principal y el marrón oscuro (`linear-gradient(135deg, var(--color-primary) 0%, var(--color-header-bg) 62%)`) en la cabecera, imitando el cielo degradado y el emblema circular de la cabecera de Goku.
-- Paleta minimalista: blanco como base, un acento dorado apagado y un tono oscuro solo en la cabecera y el pie, imitando el bloque de color sólido del CV de Goku.
-- Ningún uso de `!important`.
+- `:root`-eko aldagaiak koloreetarako, ertzen erradioetarako, letra-tamainetarako (`rem`) eta tarteetarako, balioak errepikatzea saihesteko.
+- `calc()` goiburu ilunaren padding bertikalerako (`calc(var(--space-lg) + 0.5rem)`).
+- `min()` orriaren zabalera mugatzeko (`min(60rem, 96vw)`) eta goiburuko izenaren tamainarako (`min(2.5rem, 8vw)`).
+- Benetako atzealde-irudia (`escuela.jpg`, oso lausotua), puntu-patroi batekin (`radial-gradient`), eraztun dekoratibo batekin eta urre nagusiaren eta marroi ilunaren arteko gradiente lineal nabarmen batekin (`linear-gradient(135deg, var(--color-primary) 0%, var(--color-header-bg) 62%)`) konbinatuta goiburuan, Goku-ren goiburuko zeru gradientea eta enblema zirkularra imitatuz.
+- Paleta minimalista: zuria oinarri gisa, urre-azentu apal bat, eta ñabardura iluna goiburuan eta oinaldean bakarrik, Goku-ren CV-aren kolore bakarreko blokea imitatuz.
+- `!important` inon ez da erabili.
 
-## Enfoque responsive: mobile first
+## Diseinu erantzulea: mobile first
 
-Se ha elegido **mobile first**: los estilos base (sin media query) definen una única columna, pensada para pantallas pequeñas, y a partir de ahí se añade complejidad progresivamente. Se ha elegido este enfoque porque:
+**Mobile first** ikuspegia aukeratu da: oinarrizko estiloek (media query gabekoek) zutabe bakarra definitzen dute, pantaila txikietarako pentsatuta, eta handik aurrera konplexutasuna pixkanaka gehitzen da. Ikuspegi hau aukeratu da, zeren:
 
-- Un CV se consulta a menudo desde el móvil (por ejemplo, al compartir el enlace), así que priorizar esa experiencia como base tiene sentido.
-- Partir de una sola columna obliga a simplificar el contenido y el orden de lectura antes de añadir la disposición más compleja de dos columnas, en lugar de ir "recortando" un diseño de escritorio ya complejo.
-- Es más sencillo ir añadiendo reglas con `min-width` para pantallas más grandes que sobrescribir un diseño de escritorio completo con `max-width` en pantallas pequeñas.
+- CV bat askotan mugikorretik kontsultatzen da (adibidez, esteka partekatzean), beraz esperientzia hori oinarri gisa lehenestea zentzuzkoa da.
+- Zutabe bakarretik abiatzeak edukia eta irakurketa-ordena sinplifikatzera behartzen du bi zutabeko antolaketa konplexuagoa gehitu aurretik, mahaigaineko diseinu konplexu bat "mozten" joan beharrean.
+- Errazagoa da pantaila handietarako arauak `min-width`-ekin gehitzen joatea, mahaigaineko diseinu oso bat pantaila txikietan `max-width`-ekin gainidaztea baino.
 
 ## Media query
 
-Se utiliza un único breakpoint:
+Breakpoint bakarra erabiltzen da:
 
 ```css
 @media (min-width: 48rem) { ... }
 ```
 
-48rem equivale a 768px, un punto de corte habitual que separa los móviles (incluidos en horizontal) de tablets/portátiles pequeños. A partir de ahí:
+48rem 768px-ren baliokidea da, mugikorrak (horizontalean daudenak barne) eta tablet/ordenagailu eramangarri txikiak bereizten dituen ohiko mugarria. Handik aurrera:
 
-- `.sheet` pasa de columna a fila: la barra lateral (`.sidebar`) toma un ancho fijo (`--sidebar-width`) y el contenido (`.main-content`) ocupa el resto, con la barra lateral estirándose automáticamente a toda la altura de la hoja gracias a `align-items: stretch`.
-- `.training-grid` pasa de 1 a 4 columnas y `.split-block` (logros + manías) de 1 a 2, ambas manteniendo el `gap`.
-- `.header-profile` pasa de columna a fila, para que la etiqueta/título del perfil y el párrafo queden lado a lado, como en la cabecera de Goku.
+- `.sheet` zutabetik errenkadara pasatzen da: alboko barrak (`.sidebar`) zabalera finkoa hartzen du (`--sidebar-width`) eta edukiak (`.main-content`) gainerakoa betetzen du, alboko barra automatikoki orriaren altuera osora luzatzen delarik `align-items: stretch` erabiliz.
+- `.training-grid` 1etik 4 zutabetara pasatzen da eta `.split-block` (lorpenak + maniak) 1etik 2ra, biak `gap`-a mantenduz.
+- `.header-profile` zutabetik errenkadara pasatzen da, profilaren etiketa/izenburua eta paragrafoa elkarren ondoan gera daitezen, Goku-ren goiburuan bezala.
 
-Por debajo de ese ancho, la barra lateral se apila encima del contenido y las cuadrículas pasan a una sola columna, para que sea legible sin necesidad de hacer zoom ni desplazarse horizontalmente.
+Zabalera horretatik behera, alboko barra edukiaren gainean pilatzen da eta sareta guztiak zutabe bakarrera pasatzen dira, zoomik egin edo horizontalki mugitu behar izan gabe irakurgarria izan dadin.
